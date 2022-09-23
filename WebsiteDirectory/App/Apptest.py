@@ -68,7 +68,7 @@ def generate_page_header ():
 app = dash.Dash (__name__, external_stylesheets=[dbc.themes.BOOTSTRAP], use_pages=True,
                  update_title='Loading Components... Please wait..',
                  suppress_callback_exceptions=True)
-
+server=app.server
 page_header = generate_page_header ()
 app.layout = html.Div ([
     #get_page_color(),
@@ -93,6 +93,6 @@ app.layout = html.Div ([
 # In[ ]:
 
 if __name__ == '__main__':
-    app.run_server (debug=False,port=3006, threaded=True)
+    app.run_server ()
 
 # In[ ]:
